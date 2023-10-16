@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+  opencv:
+    image: kmchord9/opencv:4.5-bullseyes-20230503
+    platform: linux/amd64
+    devices:
+      - "/dev/vchiq:/dev/vchiq"
+      #- "/dev/vcsm:/dev/vcsm"
+      - "/dev/vcsm-cma:/dev/vcsm-cma"
+      - "/dev/video0:/dev/video0"
+    volumes:
+      - "./volume:/data"
+    tty: true
